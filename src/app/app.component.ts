@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sucafina';
+
+  activeTab = 1;
+
+  menuCode: string;
+  menuName: string;
+  description: string;
+  startDate: Date;
+  endDate: Date;
 }
