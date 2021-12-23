@@ -22,71 +22,78 @@
     <div class="col-9 col-xs-12" style="height: 1000px">
       <div class="row" id="section-information">
         <div class="col-6 col-offset-6">
-          <h2>
-            Information
-            <button
-              pButton
-              type="button"
-              class="btn p-button-sm float-right p-button-success"
-              [ngClass]="{ 'p-button-outlined': activeTab !== 1 }"
-              label="General"
-            ></button>
-            <button
-              pButton
-              type="button"
-              class="btn p-button-sm float-right p-button-warning"
-              [ngClass]="{ 'p-button-outlined': activeTab === 1 }"
-              label="Extra Information"
-            ></button>
-          </h2>
+          <h2>Information</h2>
         </div>
         <div class="col-6"></div>
-        <div class="col-6">
-          <div class="p-float-label">
-            <input
-              type="text"
-              pInputText
-              id="menu-code"
-              [(ngModel)]="menuCode"
-            />
-            <label for="menu-code">Menu Code</label>
-          </div>
-          <div class="p-float-label">
-            <input
-              type="text"
-              pInputText
-              id="menu-name"
-              [(ngModel)]="menuName"
-            />
-            <label for="menu-name">Menu Name</label>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="p-float-label">
-            <textarea
-              pInputTextArea
-              id="description"
-              [(ngModel)]="description"
-            ></textarea>
-            <label for="description">Description</label>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="p-float-label">
-            <p-calendar
-              inputId="start-date"
-              [(ngModel)]="startDate"
-            ></p-calendar>
-            <label for="start-date">Start Date</label>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="p-float-label">
-            <p-calendar inputId="end-date" [(ngModel)]="endDate"></p-calendar>
-            <label for="end-date">End Date</label>
-          </div>
-        </div>
       </div>
+      <p-tabView [(activeIndex)]="activeTabIndex">
+        <p-tabPanel header="General">
+          <div class="row">
+            <div class="col-6">
+              <div class="p-float-label">
+                <input
+                  type="text"
+                  pInputText
+                  id="menu-code"
+                  [(ngModel)]="menuCode"
+                />
+                <label for="menu-code">Menu Code</label>
+              </div>
+              <div class="p-float-label">
+                <input
+                  type="text"
+                  pInputText
+                  id="menu-name"
+                  [(ngModel)]="menuName"
+                />
+                <label for="menu-name">Menu Name</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-float-label">
+                <textarea
+                  pInputTextArea
+                  id="description"
+                  [(ngModel)]="description"
+                ></textarea>
+                <label for="description">Description</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-float-label">
+                <p-calendar
+                  inputId="start-date"
+                  [(ngModel)]="startDate"
+                ></p-calendar>
+                <label for="start-date">Start Date</label>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="p-float-label">
+                <p-calendar
+                  inputId="end-date"
+                  [(ngModel)]="endDate"
+                ></p-calendar>
+                <label for="end-date">End Date</label>
+              </div>
+            </div>
+          </div>
+        </p-tabPanel>
+
+        <p-tabPanel header="Extra Information">
+          <div class="row">
+            <div class="col-6 col-offset-6">
+              <label>Menu Code</label>
+              <div>{{ menuCode }}</div>
+            </div>
+            <div class="col-6 col-offset-6">
+              <label>Menu Name</label>
+              <div>{{ menuName }}</div>
+            </div>
+          </div>
+        </p-tabPanel>
+      </p-tabView>
+
       <div class="row" id="section-menu-item">
         <div class="col-12">
           <h2>Menu Item</h2>
