@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 .page {
-  height: 100vh;
+  height: 200vh;
+}
+
+.p-button.active {
+  border-bottom: 3px solid silver !important;
 }

@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
+import { MessagesModule } from 'primeng/messages';
 import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { TabViewModule } from 'primeng/tabview';
     ButtonModule,
     CalendarModule,
     InputTextModule,
+    MessagesModule,
     TabViewModule
   ],
   providers: [],

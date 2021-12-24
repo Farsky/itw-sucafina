@@ -3,15 +3,23 @@
     <aside class="col-3 col-xs-12">
       <div class="btn-group-vertical btn-block sticky-top">
         <a
-          href="#section-information"
           pButton
+          [ngClass]="{
+            active: activeElementSelector === '#section-information'
+          }"
+          (click)="goToElement('#section-information')"
+          href="#section-information"
           class="btn p-button-text p-button-success"
           icon="pi pi-check"
           label="Information"
         ></a>
         <a
-          href="#section-menu-item"
           pButton
+          [ngClass]="{
+            active: activeElementSelector === '#section-menu-item'
+          }"
+          (click)="goToElement('#section-menu-item')"
+          href="#section-menu-item"
           type="button"
           class="btn p-button-text p-button-danger"
           icon="pi pi-info-circle"
@@ -30,51 +38,68 @@
         <p-tabPanel header="General">
           <div class="row">
             <div class="col-6">
-              <div class="p-float-label">
+              <div class="p-field p-fluid">
+                <label for="menu-code">Menu Code</label>
                 <input
                   type="text"
                   pInputText
                   id="menu-code"
                   [(ngModel)]="menuCode"
+                  [ngClass]="{ 'ng-invalid ng-dirty': menuCodeError !== '' }"
                 />
-                <label for="menu-code">Menu Code</label>
+                <small class="p-error" *ngIf="menuCodeError !== ''">{{
+                  menuCodeError
+                }}</small>
               </div>
-              <div class="p-float-label">
+              <div class="p-field p-fluid">
+                <label for="menu-name">Menu Name</label>
                 <input
                   type="text"
                   pInputText
                   id="menu-name"
                   [(ngModel)]="menuName"
+                  [ngClass]="{ 'ng-invalid ng-dirty': menuNameError !== '' }"
                 />
-                <label for="menu-name">Menu Name</label>
+                <small class="p-error" *ngIf="menuNameError !== ''">{{
+                  menuNameError
+                }}</small>
               </div>
             </div>
             <div class="col-6">
-              <div class="p-float-label">
+              <div class="p-field p-fluid">
+                <label for="description">Description</label>
                 <textarea
                   pInputTextArea
                   id="description"
                   [(ngModel)]="description"
+                  class="p-inputtextarea"
                 ></textarea>
-                <label for="description">Description</label>
               </div>
             </div>
             <div class="col-6">
-              <div class="p-float-label">
+              <div class="p-field p-fluid">
+                <label for="start-date">Start Date</label>
                 <p-calendar
                   inputId="start-date"
                   [(ngModel)]="startDate"
+                  [ngClass]="{ 'ng-invalid ng-dirty': startDateError !== '' }"
                 ></p-calendar>
-                <label for="start-date">Start Date</label>
+                <small class="p-error" *ngIf="startDateError !== ''">{{
+                  startDateError
+                }}</small>
               </div>
             </div>
             <div class="col-6">
-              <div class="p-float-label">
+              <div class="p-field p-fluid">
+                <label for="end-date">End Date</label>
                 <p-calendar
                   inputId="end-date"
                   [(ngModel)]="endDate"
+                  [ngClass]="{ 'ng-invalid ng-dirty': endDateError !== '' }"
                 ></p-calendar>
-                <label for="end-date">End Date</label>
+                <small class="p-error" *ngIf="endDateError !== ''">{{
+                  endDateError
+                }}</small>
               </div>
             </div>
           </div>
