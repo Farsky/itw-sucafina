@@ -1,14 +1,11 @@
 # Sucafina
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This is the source code of Sucafina coding test, done by [Farsky](mailto:farsky_vt@yahoo.com) on Dec 24th, 2021.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
